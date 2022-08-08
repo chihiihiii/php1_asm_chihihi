@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'part/header.php';
 ?>
 <!-- Page wrapper  -->
 <!-- ============================================================== -->
@@ -759,5 +759,5 @@ include 'header.php';
 <!-- ============================================================== -->
 
 <?php
-include 'footer.php';
+include 'part/footer.php';
 ?>
