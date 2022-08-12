@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 08, 2022 lúc 04:30 AM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.6
+-- Thời gian đã tạo: Th8 12, 2022 lúc 08:11 AM
+-- Phiên bản máy phục vụ: 10.4.11-MariaDB
+-- Phiên bản PHP: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,10 +70,10 @@ CREATE TABLE `hoadon` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `khanhhang`
+-- Cấu trúc bảng cho bảng `khachhang`
 --
 
-CREATE TABLE `khanhhang` (
+CREATE TABLE `khachhang` (
   `id_kh` int(11) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
@@ -96,6 +96,13 @@ CREATE TABLE `loaisanpham` (
   `ten` varchar(255) DEFAULT NULL,
   `trangthai` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `loaisanpham`
+--
+
+INSERT INTO `loaisanpham` (`id_lsp`, `ten`, `trangthai`) VALUES
+(1, 'Loai san pham 1', '1');
 
 -- --------------------------------------------------------
 
@@ -130,9 +137,9 @@ ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`id_hd`);
 
 --
--- Chỉ mục cho bảng `khanhhang`
+-- Chỉ mục cho bảng `khachhang`
 --
-ALTER TABLE `khanhhang`
+ALTER TABLE `khachhang`
   ADD PRIMARY KEY (`id_kh`);
 
 --
@@ -164,16 +171,16 @@ ALTER TABLE `hoadon`
   MODIFY `id_hd` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `khanhhang`
+-- AUTO_INCREMENT cho bảng `khachhang`
 --
-ALTER TABLE `khanhhang`
+ALTER TABLE `khachhang`
   MODIFY `id_kh` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `loaisanpham`
 --
 ALTER TABLE `loaisanpham`
-  MODIFY `id_lsp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_lsp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`

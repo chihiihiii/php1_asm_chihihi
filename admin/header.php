@@ -8,16 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/admin/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/admin/images/favicon.png">
     <!-- CSS -->
-    <link href="../../assets/admin/libs/flot/css/float-chart.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../../assets/admin/extra-libs/multicheck/multicheck.css">
-    <link href="../../assets/admin/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../assets/admin/libs/flot/css/float-chart.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/admin/extra-libs/multicheck/multicheck.css">
+    <link href="../assets/admin/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
 
-    
-    
+    <link rel="stylesheet" type="text/css" href="../assets/admin/libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/admin/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css" href="../assets/admin/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/admin/libs/quill/dist/quill.snow.css">
+
     <!-- Custom CSS -->
-    <link href="../../assets/admin/dist/css/style.min.css" rel="stylesheet">
+    <link href="../assets/admin/dist/css/style.min.css" rel="stylesheet">
 
 </head>
 
@@ -25,12 +28,12 @@
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
         </div>
-    </div>
+    </div> -->
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -50,21 +53,21 @@
                         <b class="logo-icon ps-2">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../../assets/admin/images/logo-icon.png" alt="homepage" class="light-logo" />
+                            <img src="../assets/admin/images/logo-icon.png" alt="homepage" class="light-logo" />
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="../../assets/admin/images/logo-text.png" alt="homepage" class="light-logo" />
+                            <img src="../assets/admin/images/logo-text.png" alt="homepage" class="light-logo" />
 
                         </span>
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon"> -->
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
-                        <!-- <img src="../../assets/admin/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+                        <!-- <img src="../assets/admin/images/logo-text.png" alt="homepage" class="light-logo" /> -->
 
                         <!-- </b> -->
                         <!--End Logo icon -->
@@ -200,7 +203,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../../assets/admin/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+                                <img src="../assets/admin/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user me-1 ms-1"></i>
@@ -240,23 +243,24 @@
 
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Loại sản phẩm </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="loaisanpham/index.php" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Danh sách
+                                <li class="sidebar-item"><a href="loaisanpham-ds.php" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Danh sách
                                         </span></a></li>
-                                <li class="sidebar-item"><a href="loaisanpham/create.php" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Thêm mới
+                                <li class="sidebar-item"><a href="loaisanpham-them.php" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Thêm mới
                                         </span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Sản phẩm </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="sanpham/index.php" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Danh sách
+                                <li class="sidebar-item"><a href="sanpham-ds.php" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Danh sách
                                         </span></a></li>
-                                <li class="sidebar-item"><a href="sanpham/create.php" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Thêm mới
+                                <li class="sidebar-item"><a href="sanpham-them.php" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Thêm mới
                                         </span></a></li>
                             </ul>
                         </li>
 
                         <li class="sidebar-item p-3">
-                            <a href="" target="_blank" class="w-100 btn btn-cyan d-flex align-items-center text-white"><i class="mdi mdi-cloud-download font-20 me-2"></i>Chihihi</a>
+                            <a href="https://github.com/chihiihiii/php1_asm_chihihi" target="_blank" class="w-100 btn btn-cyan d-flex align-items-center text-white"><i class="mdi mdi-cloud-download font-20 me-2"></i>Chihihi</a>
+                            <a href="https://github.com/wrappixel/matrix-admin-lite" target="_blank" class="w-100 btn btn-cyan d-flex align-items-center text-white"><i class="mdi mdi-cloud-download font-20 me-2"></i>Theme</a>
                         </li>
                     </ul>
                 </nav>
