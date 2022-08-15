@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (isset($_POST['dangnhap'])) {
     require '../connect.php';
 
@@ -12,6 +12,7 @@ if (isset($_POST['dangnhap'])) {
 
     
     if ($conn->query($query)->num_rows > 0) {
+        $_SESSION['admin'] = $username;
         header('location: index.php');
     } else {
         echo ("LOI" . $conn->connect_error);

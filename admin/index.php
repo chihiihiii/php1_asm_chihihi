@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("location: dangnhap.php");
+}
 include 'header.php';
 ?>
 <!-- Page wrapper  -->
