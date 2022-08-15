@@ -16,7 +16,7 @@ include 'header.php';
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">DANH SÁCH LOẠI SẢN PHẨM</li>
+                            <li class="breadcrumb-item active" aria-current="page">Danh sách loại sản phẩm</li>
                         </ol>
                     </nav>
                 </div>
@@ -38,7 +38,7 @@ include 'header.php';
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">DANH SÁCH LOẠI SẢN PHẨM</h5>
+                        <h5 class="card-title">Danh sách loại sản phẩm</h5>
                         <div class="table-responsive">
                             <table id="" class="table table-striped table-bordered">
                                 <thead>

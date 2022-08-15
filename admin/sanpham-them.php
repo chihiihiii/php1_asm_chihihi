@@ -10,12 +10,12 @@ include 'header.php';
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">QUẢN LÝ LOẠI SẢN PHẨM</h4>
+                <h4 class="page-title">QUẢN LÝ SẢN PHẨM</h4>
                 <div class="ms-auto text-end">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Thêm loại sản phẩm</li>
+                            <li class="breadcrumb-item active" aria-current="page">Thêm sản phẩm</li>
                         </ol>
                     </nav>
                 </div>
@@ -32,128 +32,75 @@ include 'header.php';
         <!-- ============================================================== -->
         <!-- Start Page Content -->
         <!-- ============================================================== -->
+        <?php
+        require '../connect.php';
+        $query = "SELECT * FROM loaisanpham";
+        $loaisanpham_ds = $conn->query($query);
+
+
+        ?>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="sanpham-them-xuly.php" method="post" enctype="multipart/form-data">
                         <div class="card-body">
-                            <h4 class="card-title">Thêm loại sản phẩm</h4>
+                            <h4 class="card-title">Thêm sản phẩm</h4>
                             <div class="form-group row">
-                                <label for="fname" class="col-sm-3 text-end control-label col-form-label">First Name</label>
+                                <label for="ten" class="col-sm-3 text-end control-label col-form-label">Tên sản phẩm</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="fname" placeholder="First Name Here">
+                                    <input type="text" class="form-control" id="ten" name="ten">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="lname" class="col-sm-3 text-end control-label col-form-label">Last
-                                    Name</label>
+                                <label for="gia" class="col-sm-3 text-end control-label col-form-label">Giá</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="lname" placeholder="Last Name Here">
+                                    <input type="text" class="form-control" id="gia" name="gia">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="lname" class="col-sm-3 text-end control-label col-form-label">Password</label>
+                                <label for="hinhanh" class="col-sm-3 text-end control-label col-form-label">Hình ảnh</label>
                                 <div class="col-sm-9">
-                                    <input type="password" class="form-control" id="lname" placeholder="Password Here">
+                                    <input type="file" class="form-control" id="hinhanh" name="hinhanh">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="email1" class="col-sm-3 text-end control-label col-form-label">Company</label>
+                                <label for="mota" class="col-sm-3 text-end control-label col-form-label">Mô tả</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="email1" placeholder="Company Name Here">
+                                    <textarea class="form-control" id="mota" name="mota"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="cono1" class="col-sm-3 text-end control-label col-form-label">Contact No</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="cono1" placeholder="Contact No Here">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="cono1" class="col-sm-3 text-end control-label col-form-label">Message</label>
-                                <div class="col-sm-9">
-                                    <textarea class="form-control"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-3 text-end control-label col-form-label">Single Select</label>
+                                <label class="col-sm-3 text-end control-label col-form-label">Loại sản phẩm</label>
                                 <div class="col-md-9">
-                                    <select class="select2 form-select shadow-none" style="width: 100%; height:36px;">
-                                        <option>Select</option>
-                                        <optgroup label="Alaskan/Hawaiian Time Zone">
-                                            <option value="AK">Alaska</option>
-                                            <option value="HI">Hawaii</option>
-                                        </optgroup>
-                                        <optgroup label="Pacific Time Zone">
-                                            <option value="CA">California</option>
-                                            <option value="NV">Nevada</option>
-                                            <option value="OR">Oregon</option>
-                                            <option value="WA">Washington</option>
-                                        </optgroup>
-                                        <optgroup label="Mountain Time Zone">
-                                            <option value="AZ">Arizona</option>
-                                            <option value="CO">Colorado</option>
-                                            <option value="ID">Idaho</option>
-                                            <option value="MT">Montana</option>
-                                            <option value="NE">Nebraska</option>
-                                            <option value="NM">New Mexico</option>
-                                            <option value="ND">North Dakota</option>
-                                            <option value="UT">Utah</option>
-                                            <option value="WY">Wyoming</option>
-                                        </optgroup>
-                                        <optgroup label="Central Time Zone">
-                                            <option value="AL">Alabama</option>
-                                            <option value="AR">Arkansas</option>
-                                            <option value="IL">Illinois</option>
-                                            <option value="IA">Iowa</option>
-                                            <option value="KS">Kansas</option>
-                                            <option value="KY">Kentucky</option>
-                                            <option value="LA">Louisiana</option>
-                                            <option value="MN">Minnesota</option>
-                                            <option value="MS">Mississippi</option>
-                                            <option value="MO">Missouri</option>
-                                            <option value="OK">Oklahoma</option>
-                                            <option value="SD">South Dakota</option>
-                                            <option value="TX">Texas</option>
-                                            <option value="TN">Tennessee</option>
-                                            <option value="WI">Wisconsin</option>
-                                        </optgroup>
-                                        <optgroup label="Eastern Time Zone">
-                                            <option value="CT">Connecticut</option>
-                                            <option value="DE">Delaware</option>
-                                            <option value="FL">Florida</option>
-                                            <option value="GA">Georgia</option>
-                                            <option value="IN">Indiana</option>
-                                            <option value="ME">Maine</option>
-                                            <option value="MD">Maryland</option>
-                                            <option value="MA">Massachusetts</option>
-                                            <option value="MI">Michigan</option>
-                                            <option value="NH">New Hampshire</option>
-                                            <option value="NJ">New Jersey</option>
-                                            <option value="NY">New York</option>
-                                            <option value="NC">North Carolina</option>
-                                            <option value="OH">Ohio</option>
-                                            <option value="PA">Pennsylvania</option>
-                                            <option value="RI">Rhode Island</option>
-                                            <option value="SC">South Carolina</option>
-                                            <option value="VT">Vermont</option>
-                                            <option value="VA">Virginia</option>
-                                            <option value="WV">West Virginia</option>
-                                        </optgroup>
+                                    <select class="select2 form-select shadow-none" style="width: 100%; height:36px;" name="id_lsp">
+                                        <?php
+                                        if ($loaisanpham_ds->num_rows > 0) :
+                                            while ($loaisanpham = $loaisanpham_ds->fetch_assoc()) :
+                                        ?>
+                                                <option value="<?= $loaisanpham['id_lsp'] ?>"><?= $loaisanpham['ten'] ?></option>
+
+                                        <?php
+                                            endwhile;
+                                        endif;
+
+                                        ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 text-end control-label col-form-label">File Upload</label>
+                                <label class="col-sm-3 text-end control-label col-form-label">Trạng thái</label>
                                 <div class="col-md-9">
-                                    <input type="file" class="form-control" name="" id="">
+                                    <select class="select2 form-select shadow-none" style="width: 100%; height:36px;" name="trangthai">
+                                        <option value="1">Hiển thị</option>
+                                        <option value="0">Ẩn</option>
 
+                                    </select>
                                 </div>
                             </div>
                         </div>
                         <div class="border-top">
                             <div class="card-body">
-                                <button type="button" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary" name="them">Thêm</button>
                             </div>
                         </div>
                     </form>
@@ -178,22 +125,8 @@ include 'header.php';
     <!-- End Container fluid  -->
     <!-- ============================================================== -->
     <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <footer class="footer text-center">
-        All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://www.wrappixel.com">WrapPixel</a>.
-    </footer>
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Page wrapper  -->
-<!-- ============================================================== -->
-</div>
-<!-- ============================================================== -->
-<!-- End Wrapper -->
 
-<?php
-include 'footer.php';
-?>
+
+    <?php
+    include 'footer.php';
+    ?>
