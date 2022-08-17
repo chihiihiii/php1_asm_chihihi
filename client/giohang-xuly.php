@@ -12,6 +12,7 @@ if (isset($_POST['them'])) {
     $gia = $sp['gia'];
 
     if (isset($_COOKIE['cart'])) {
+        // nếu đã tồn tại cookie cart thì lấy giá trị của cookie cart 
         $cookie_data = $_COOKIE['cart'];
 
         $cart_data = json_decode($cookie_data, true);
@@ -43,19 +44,15 @@ if (isset($_POST['them'])) {
 
 
     header('location: giohang.php');
-    // var_dump($_COOKIE['cart']);
-
-    // header('location: cart.php');
 }
 
 if (isset($_POST['sua'])) {
 
     $id_sp = $_POST['id_sp'];
     $soluong = $_POST['soluong'];
-        if (isset($_COOKIE['cart'])) {
-            $cookie_data = $_COOKIE['cart'];
-        }
-    else {
+    if (isset($_COOKIE['cart'])) {
+        $cookie_data = $_COOKIE['cart'];
+    } else {
         $cart_data = array();
     }
 
@@ -81,5 +78,28 @@ if (isset($_POST['sua'])) {
     $product_data = json_encode($cart_data);
     setcookie('cart', $product_data, time() + 3600 * 24 * 30 * 12);
 
+    header('location: giohang.php');
+}
+
+if (isset($_POST['xoa'])) {
+    if (isset($_COOKIE['cart'])) {
+        $cookie_data = $_COOKIE['cart'];
+        $cart_data = json_decode($cookie_data, true);
+        foreach ($cart_data as $key => $value) {
+            if ($cart_data[$key]['id_sp'] == $_GET['id_sp']) {
+                unset($cart_data[$key]);
+                $product_data = json_encode($cart_data);
+
+                setcookie("cart", $product_data, time() +  3600 * 24 * 30 * 12);
+            }
+        }
+    }
+    header('location: giohang.php');
+}
+
+if (isset($_POST['xoatatca'])) {
+    if (isset($_COOKIE['cart'])) {
+        setcookie("cart", "", time() -  3600 * 24 * 30 * 12);
+    }
     header('location: giohang.php');
 }
