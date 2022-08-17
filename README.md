@@ -5,3 +5,14 @@
 - Clone code (hoặc download zip) về và di chuyển thư mục php1_asm_chihihi vào htdocs
 - Truy cập vào link http://localhost/php1_asm_chihihi để thấy sự bất ngờ
 
+
+
+*** Admin:
+    - username: admin
+    - password: 123456
+
+*** Client:
+    - username: chihihi
+    - password: 123456
+    
+
