@@ -84,7 +84,7 @@ if (empty($_COOKIE['cart'])) {
                 </tr>
                 <tr>
                     <td colspan="5">
-                        <a href="" class="btn btn-outline-dark">Thanh toán</a>
+                        <a href="thanhtoan.php" class="btn btn-outline-dark">Thanh toán</a>
                     </td>
                     <td class="text-right">
                         <!-- xóa giỏ hàng  -->

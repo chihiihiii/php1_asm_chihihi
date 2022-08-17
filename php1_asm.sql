@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 17, 2022 lúc 09:22 AM
+-- Thời gian đã tạo: Th8 17, 2022 lúc 04:19 PM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.4.4
 
@@ -56,8 +56,16 @@ CREATE TABLE `chitiethoadon` (
   `id_hd` int(11) DEFAULT NULL,
   `id_sp` int(11) DEFAULT NULL,
   `soluong` int(11) DEFAULT NULL,
-  `gia` tinyint(1) DEFAULT NULL
+  `gia` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `chitiethoadon`
+--
+
+INSERT INTO `chitiethoadon` (`id_hd`, `id_sp`, `soluong`, `gia`) VALUES
+(1, 1, 3, 70000),
+(1, 2, 5, 50000);
 
 -- --------------------------------------------------------
 
@@ -73,6 +81,13 @@ CREATE TABLE `hoadon` (
   `tgdat` datetime DEFAULT current_timestamp(),
   `id_kh` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `hoadon`
+--
+
+INSERT INTO `hoadon` (`id_hd`, `sdt`, `diachi`, `tongtien`, `tgdat`, `id_kh`) VALUES
+(1, '0777831747', 'Quận Cam', 460000, '2022-08-17 21:15:05', 1);
 
 -- --------------------------------------------------------
 
@@ -192,7 +207,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `id_hd` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_hd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
