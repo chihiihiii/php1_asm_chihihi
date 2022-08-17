@@ -14,6 +14,7 @@ if (isset($_POST['them'])) {
 
     if (isset($_COOKIE['cart'])) {
         // nếu đã tồn tại cookie cart thì lấy giá trị của cookie cart 
+        // nếu đã tồn tại cookie cart thì lấy giá trị của cookie cart 
         $cookie_data = $_COOKIE['cart'];
 
         // chuyển string thành array 
