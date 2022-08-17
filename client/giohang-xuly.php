@@ -48,38 +48,42 @@ if (isset($_POST['them'])) {
     // header('location: cart.php');
 }
 
-if (isset($_POST['sua'])) {
+// if (isset($_POST['sua'])) {
 
-    $id_sp = $_POST['id_sp'];
-    $soluong = $_POST['soluong'];
-        if (isset($_COOKIE['cart'])) {
-            $cookie_data = $_COOKIE['cart'];
-        }
-    else {
-        $cart_data = array();
-    }
+//     $id_sp = $_POST['id_sp'];
+//     $soluong = $_POST['soluong'];
+//     $ten = $sp['ten'];
+//     $hinhanh = $sp['hinhanh'];
+//     $gia = $sp['gia'];
 
-    $id_sp_ds = array_column($cart_data, 'id_sp');
+//         if (isset($_COOKIE['cart'])) {
+//             $cookie_data = $_COOKIE['cart'];
+//         }
+//     else {
+//         $cart_data = array();
+//     }
 
-    if (in_array($id_sp, $id_sp_ds)) {
-        foreach ($cart_data as $key => $value) {
-            if ($cart_data[$key]['id_sp'] == $id_sp) {
-                $cart_data[$key]['soluong'] =  $soluong;
-            }
-        }
-    } else {
-        $product_array = array(
-            'id_sp' => $id_sp,
-            'ten' => $ten,
-            'gia' => $gia,
-            'soluong' => 1,
-            'hinhanh' => $hinhanh
-        );
-        $cart_data[] = $product_array;
-    }
+//     $id_sp_ds = array_column($cart_data, 'id_sp');
 
-    $product_data = json_encode($cart_data);
-    setcookie('cart', $product_data, time() + 3600 * 24 * 30 * 12);
+//     if (in_array($id_sp, $id_sp_ds)) {
+//         foreach ($cart_data as $key => $value) {
+//             if ($cart_data[$key]['id_sp'] == $id_sp) {
+//                 $cart_data[$key]['soluong'] =  $soluong;
+//             }
+//         }
+//     } else {
+//         $product_array = array(
+//             'id_sp' => $id_sp,
+//             'ten' => $ten,
+//             'gia' => $gia,
+//             'soluong' => 1,
+//             'hinhanh' => $hinhanh
+//         );
+//         $cart_data[] = $product_array;
+//     }
 
-    header('location: giohang.php');
-}
+//     $product_data = json_encode($cart_data);
+//     setcookie('cart', $product_data, time() + 3600 * 24 * 30 * 12);
+
+//     header('location: giohang.php');
+// }

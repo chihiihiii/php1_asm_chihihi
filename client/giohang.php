@@ -37,7 +37,18 @@
                         <td scope="row"><?= $sp['id_sp'] ?></td>
                         <td><?= $sp['ten'] ?></td>
                         <td> <?= number_format($sp['gia']) ?> đ</td>
-                        <td> <?= $sp['soluong'] ?></td>
+                        <td width="200px">
+                            <form action="giohang-xuly.php" method="post">
+                                <input type="number" name="soluong" value="<?= $sp['soluong'] ?>" onchange="this.form.submit()" class="form-control">
+                                <input type="hidden" name="id_sp" value="<?= $sp['id_sp'] ?>">
+                                <input type="hidden" name="ten" value="<?= $sp['ten'] ?>">
+                                <input type="hidden" name="gia" value="<?= $sp['gia'] ?>">
+                                <input type="hidden" name="hinhanh" value="<?= $sp['hinhanh'] ?>">
+                                <input type="hidden" name="sua">
+
+                            </form>
+
+                        </td>
                         <td> <?= number_format($sp['gia'] * $sp['soluong']) ?> đ</td>
 
                     </tr>
