@@ -1,3 +1,8 @@
+<?php
+if (empty($_COOKIE['cart'])) {
+    header('location: sanpham-ds.php');
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -21,6 +26,7 @@
                     <th>Giá</th>
                     <th>Số lượng</th>
                     <th>Tổng tiền</th>
+                    <th width="15%"></th>
                 </tr>
             </thead>
             <tbody>
@@ -30,16 +36,21 @@
                 $cookie_data = $_COOKIE['cart'];
                 $cart_data = json_decode($cookie_data, true);
 
+                $tongtatca = 0;
                 // var_dump($cart_data);
                 foreach ($cart_data as $sp) :
+                    $tongtien = $sp['gia'] * $sp['soluong'];
+                    $tongtatca += $tongtien;
                 ?>
                     <tr>
                         <td scope="row"><?= $sp['id_sp'] ?></td>
                         <td><?= $sp['ten'] ?></td>
                         <td> <?= number_format($sp['gia']) ?> đ</td>
                         <td width="200px">
+                            <!-- cập nhật số lượng sản phẩm  -->
+
                             <form action="giohang-xuly.php" method="post">
-                                <input type="number" name="soluong" value="<?= $sp['soluong'] ?>" onchange="this.form.submit()" class="form-control">
+                                <input type="number" name="soluong" value="<?= $sp['soluong'] ?>" onchange="this.form.submit()" class="form-control" min=1>
                                 <input type="hidden" name="id_sp" value="<?= $sp['id_sp'] ?>">
                                 <input type="hidden" name="ten" value="<?= $sp['ten'] ?>">
                                 <input type="hidden" name="gia" value="<?= $sp['gia'] ?>">
@@ -49,14 +60,44 @@
                             </form>
 
                         </td>
-                        <td> <?= number_format($sp['gia'] * $sp['soluong']) ?> đ</td>
+                        <td> <?= number_format($tongtien) ?> đ</td>
+                        <td class="text-right">
+                            <!-- xóa sản phẩm trong giỏ hàng  -->
+                            <form action="giohang-xuly.php" method="post">
 
+                                <input type="hidden" name="id_sp" id="" value="<?= $sp['id_sp'] ?>">
+                                <button class="btn btn-outline-danger" name="xoa">Xóa</button>
+                            </form>
+
+                        </td>
                     </tr>
                 <?php
                 endforeach;
                 ?>
+
+                <tr>
+                    <td colspan="4">Tổng tiền tất cả</td>
+                    <td>
+                        <b><?= number_format($tongtatca) ?> đ</b>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        <a href="" class="btn btn-outline-dark">Thanh toán</a>
+                    </td>
+                    <td class="text-right">
+                        <!-- xóa giỏ hàng  -->
+                        <form action="giohang-xuly.php" method="post">
+                            <button class="btn btn-outline-danger" name="xoatatca">Xóa giỏ hàng</button>
+                        </form>
+                    </td>
+                </tr>
+
             </tbody>
         </table>
+
+
     </div>
 
     <!-- Optional JavaScript -->
